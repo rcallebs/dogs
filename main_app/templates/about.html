@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>About the Dog Collector</h1>
+<hr>
+<p>We try to log as many dogs as we can at Dog Collector</p>
+<br>
+{% if dogs %}
+    <p>Currently we log your dogs 
+        {% for key in dogs.0.keys %}
+            {{ key }}, 
+        {% endfor %}
+    </p>
+{% else %}
+    <p>No dogs yet, hold on.</p>
+{% endif %}
+
+
+{% endblock %}
