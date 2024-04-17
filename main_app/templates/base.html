@@ -8,6 +8,7 @@
   <title>Dog Collector</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
@@ -19,6 +20,8 @@
         </ul>
         <ul class="right">
           <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'traits_create' %}">Add a Trait</a></li>
+          <li><a href="{% url 'traits_index' %}">View All Traits</a></li>
           <li><a href="{% url 'dogs_create' %}">Add a Dog</a></li>
           <li><a href="{% url 'index' %}">Check Out All the Dogs</a></li>
         </ul>

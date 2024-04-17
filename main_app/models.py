@@ -7,7 +7,15 @@ MEALS = (
     ('S', 'Snack')
 )
 
+class Trait(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.name
+    
+    def get_absolute_url(self):
+        return reverse('traits_detail', kwargs={'pk': self.id})
 
 # Create your models here.
 class Dog(models.Model):
@@ -15,6 +23,7 @@ class Dog(models.Model):
     breed =  models.CharField(max_length=100)
     description = models.TextField(max_length=200)
     age = models.IntegerField()
+    traits = models.ManyToManyField(Trait)
 
     def __str__(self):
         return self.name
